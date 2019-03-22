@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/animate.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>myblog</title>
+</head>
+<body>
+<!-- 导航栏 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!--小屏幕按钮 和logo-->
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">myblog</a>
+            </div>
+            <!--小屏幕按钮 和logo-->
+
+            <!--导航-->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#bbs">论坛</a></li>
+                    <li><a href="#html5">前端开发</a></li>
+                    <li><a href="#course">最新课程</a></li>
+                    <li><a href="#app">移动app</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                    <li><a type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">登陆</a></li>
+                </ul>
+            </div>
+            <!--导航-->
+        </div>
+    </nav>
+<!-- 导航栏 -->
+
+<!-- home -->
+<section id="home">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row wow bounce" data-wow-duration="2s
+">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h1>bootstrap学习练手项目！</h1>
+                    <p>
+                       花费了两三天的时间看着视屏跟着做出来的<br/>
+                        感觉还行，多做几个页面就熟悉了！
+                    </p>
+                    <img src="images/头像.png" class="img-responsive" alt=""/>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- home -->
+
+<!--bbs-->
+<section id="bbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="https://cn.bing.com/" target="_blank">
+                    <img src="images/图标-1.jpg" class="img-responsive" alt=""/>
+                    <h3>JAVA开发</h3>
+                    <p>JAVA基础、框架</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://cn.bing.com/" target="_blank">
+                    <img src="images/图标-1.jpg" class="img-responsive" alt=""/>
+                    <h3>前端开发</h3>
+                    <p>node.js、bootstrap、jquery</p>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://cn.bing.com/" target="_blank">
+                    <img src="images/图标-1.jpg" class="img-responsive" alt=""/>
+                    <h3>数据库</h3>
+                    <p>Mysql、Oracle、MongoDB</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--bbs-->
+
+<!--html5-->
+<section id="html5">
+    <div class="container">
+        <div class="col-md-6">
+            <h2>HTML5前端开发</h2>
+            <p></span>一线资深前端开发工程师倾情打造！助你完成普通程序员到优秀工程师的华丽升级！</p>
+            <p><span class="glyphicon glyphicon-grain mai-icon"></span>使用HTML5与CSS3技术轻松实现设备自适应展示。</p>
+            <p><span class="glyphicon glyphicon-grain mai-icon"></span>清晰明了的语义代码结构，更高的可读性、更利于页面维护的。</p>
+        </div>
+        <div class="col-md-6">
+            <img src="images\未标题-1.jpg" class="img-responsive" alt=""/>
+        </div>
+    </div>
+</section>
+<!--html5-->
+
+<!--bootstrap-->
+<section id="bootstrap">
+    <div class="container">
+        <div class="col-md-6">
+            <img src="images\未标题-1.jpg" class="img-responsive" alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h2>bootstrap实战视屏教程</h2>
+            <p></span>一线资深前端开发工程师倾情打造！助你完成普通程序员到优秀工程师的华丽升级！</p>
+            <p><span class="glyphicon glyphicon-grain mai-icon"></span>使用HTML5与CSS3技术轻松实现设备自适应展示。</p>
+            <p><span class="glyphicon glyphicon-grain mai-icon"></span>清晰明了的语义代码结构，更高的可读性、更利于页面维护的。</p>
+        </div>
+    </div>
+</section>
+<!--bootstrap-->
+<!--course-->
+<section id = "course">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>最新课程</h2>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank" role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank" role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary"  target="_blank" role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank"role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank"role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank"role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank"role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="course">
+                    <img src="images/swift.jpg" class="img-responsive" alt=""/>
+                    <a href="#" class="btn btn-primary" target="_blank"role="button">
+                        加入学习
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--course-->
+
+<!--app-->
+<section id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>没有APP下载</h2>
+                <p>
+                    全新UI交互,与新网站数据同步，更加丰富的课程，开启精彩无限，语音搜索课程，喊出你想要的课程，一键收藏，方便在即重复学习，离线下载课程，在哪儿都能看！
+                </p>
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                    iPhone版
+                </button>
+                <button class="btn btn-primary">
+                    <span class="glyphicon glyphicon-download-alt"></span>
+                    Android版
+                </button>
+            </div>
+            <div class="col-md-6">
+                <img src="images/app-banner.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!--app-->
+
+<!--contact-->
+<section id="contact">
+    <div class="lvjing">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>
+                        <span class="glyphicon glyphicon-send"></span>
+                        &nbsp;
+                        联系人
+                    </h2>
+                    <p>
+                        Oracle学习
+                        试用DISTINCT的时候需要注意，所谓的消除重复的内容，是指一条完整的数据全部是重复的，如果多行记录只有一列重复而其它列不重复，那么就无法消除的
+                    </p>
+                    <address>
+                        <p>
+                            <span class="glyphicon glyphicon-home"></span>
+                            &nbsp;
+                            地址:XX省XX市XX县XX镇XX路XX区
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                            &nbsp;
+                            联系电话:152xxxxxxxxx
+                        </p>
+                        <p>
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            &nbsp;
+                            邮箱:136xxxxxxx@qq.com
+                        </p>
+                    </address>
+                </div>
+                <div class="col-md-6">
+                    <form action="#" method="post">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="您的姓名"/>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="您的邮箱"/>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="标题"/>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="form-control" placeholder="留言内容"></textarea>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="submit" class="form-control" value="提交">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--contact-->
+
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Copyright&nbsp;☯&nbsp;2019-03-20&nbsp;www.☯☯☯.com&nbsp;蜀ICP备13014270号-4
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+
+
+<!--登陆-->
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">登陆</h4>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                               <span class="glyphicon glyphicon-user"></span>&nbsp;<input type="text" name="username" id="username" placeholder="用户名">
+                            </div>
+                            <div class="col-md-12">
+                                <span class="glyphicon glyphicon-lock"></span>&nbsp;<input type="password" name="password" id="password" placeholder="密码">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">登陆</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--登陆-->
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/wow.js"></script>
+<script>
+    $(function () {
+       /* $('.nav').singleNodeValue({
+            offset:70
+        });*/
+        /*小屏幕导航点击关闭菜单*/
+        $('.navbar-collapse a').click(function () {
+            $('.navbar-collapse').collapse('hide')
+        });
+    })
+</script>
+</body>
+</html>

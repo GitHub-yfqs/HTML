@@ -1,0 +1,38 @@
+.body{
+    font-family: 'Microsoft Yahel',sans-serif;
+}
+/*进度条*/
+.progress{
+    margin-bottom: 15px;
+}
+.list-group-item{
+    padding: 8.841px 15px;
+}
+/*边距*/
+.mar_t15{
+    margin-top: 15px;
+}
+/*头像*/
+/*paddding*/
+.pad0{
+    padding: 0;
+}
+.taglist{
+    padding-top: 15px;
+}
+
+.taglist .alert{
+    margin: 0 10px 10px 0;
+}
+
+.wh64{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+/*footer*/
+footer{
+    font-weight: 400;
+    text-align: center;
+    padding: 20px;
+}

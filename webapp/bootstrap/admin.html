@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/admin.css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<!--<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!--<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<script src="js/bootstrap.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Myblog Admin</title>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!--小屏幕按钮 和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="admin.html" class="navbar-brand">myblog&nbsp;Admin</a>
+        </div>
+        <!--小屏幕按钮 和logo-->
+
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="admin.html"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;后台首页</a></li>
+                <li><a href="user_list.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;用户管理</a></li>
+                <li><a href="content.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="tag.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="index.html"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="index.html"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;我的收藏</a></li>
+                    </ul>
+                </li>
+                <li><a href="#bbs"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+    </div>
+</nav>
+<!-- 导航栏 -->
+
+
+<div class="container">
+    <div class="row">
+        <!--警告框-->
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4>网站程序有漏洞，急需修复</h4>
+                <p>当前版本程序（V1.22）存在严重安全问题，容易造成攻击，请即可修复！</p>
+                <p>
+                    <button type="button" class="btn btn-danger">立即修复</button>
+                    <button type="button" class="btn btn-default" data-dismiss="alert">稍后处理</button>
+                </p>
+            </div>
+        </div>
+        <!--警告框-->
+
+        <!--网站数据统计-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">网站数据统计</div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>统计项目</th>
+                            <th>昨日</th>
+                            <th>今日</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>注册会员</td>
+                            <td>20</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>登陆会员</td>
+                            <td>320</td>
+                            <td>461</td>
+                        </tr>
+                        <tr>
+                            <td>今日发帖</td>
+                            <td>620</td>
+                            <td>540</td>
+                        </tr>
+                        <tr>
+                            <td>转载次数</td>
+                            <td>10001</td>
+                            <td>23000</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--网站数据统计-->
+
+        <!--网站热帖-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">网站热帖</div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习前端啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习JAVA啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习数据库啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习Vue啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习深度学习啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;这么学习大数据啊啊<small class="pull-right">2019-03-21</small></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--网站热帖-->
+
+        <!--今日访客统计-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">今日访客统计</div>
+                <div class="panel-body">
+                    <canvas id="myChart" class="col-md-12"></canvas>
+                </div>
+            </div>
+        </div>
+        <!--今日访客统计-->
+
+        <!--服务器状态-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">服务器状态</div>
+                <div class="panel-body">
+                    <p>内存使用率：40%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        </div>
+                    </div>
+                    <p>数据库试用率：20%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                        </div>
+                    </div>
+                    <p>磁盘试用率：60%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        </div>
+                    </div>
+                    <p>CPU使用率：80%</p>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--服务器状态-->
+
+        <!--团队留言板-->
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">团队留言板</div>
+                <div class="panel-body">
+                    <div class="col-md-7">
+                        <div class="media well">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object wh64" src="images/图标-1.jpg" alt="JAVA">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">JAVA</h4>
+                                JAVA用到老！！
+                            </div>
+                        </div>
+                        <div class="media well">
+                            <div class="media-body text-right">
+                                <h4 class="media-heading">Nodejs</h4>
+                                我技术栈统一！！！
+                            </div>
+                            <div class="media-right">
+                                <a href="#">
+                                    <img class="media-object wh64" src="images/图标-1.jpg" alt="Nodejs">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="media well">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object wh64" src="images/图标-1.jpg" alt="JAVA">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">JAVA</h4>
+                                JAVA发展方向全面，大数据，分布式，人工智能！！
+                            </div>
+                        </div>
+                        <div class="media well">
+                            <div class="media-body text-right">
+                                <h4 class="media-heading">Nodejs</h4>
+                                我快速开发，横向扩展很简单！！
+                            </div>
+                            <div class="media-right">
+                                <a href="#">
+                                    <img class="media-object wh64" src="images/图标-1.jpg" alt="Nodejs">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="text1">输入留言内容</label>
+                                <textarea id="text1" cols="10" rows="5" class="form-control" placeholder="请输入留言内容"></textarea>
+                                <button class="btn btn-default mar_t15" type="submit">留言</button>
+                            </div>
+                        </form>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">团队联系手册</div>
+                            <div class="panel-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">站长（XXX）：<span class="glyphicon glyphicon-phone"></span>&nbsp;xxxxxxx</li>
+                                    <li class="list-group-item">技术（XXX）：<span class="glyphicon glyphicon-phone"></span>&nbsp;xxxxxxx</li>
+                                    <li class="list-group-item">推广（XXX）：<span class="glyphicon glyphicon-phone"></span>&nbsp;xxxxxxx</li>
+                                    <li class="list-group-item">客服（XXX）：<span class="glyphicon glyphicon-phone"></span>&nbsp;xxxxxxx</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--团队留言板-->
+    </div>
+</div>
+
+
+
+<!--footer-->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Copyright&nbsp;☯&nbsp;2019-03-20&nbsp;www.☯☯☯.com&nbsp;蜀ICP备13014270号-4
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer-->
+<!--<script src="js/chart.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="js/myChart.js"></script>
+<!--<script src="js/script.js"></script>-->
+</body>
+</html>
