@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>50-无限循环滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 161px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul{
+            list-style:none;
+            width: 1800px;
+            height: 161px;
+            /*background: rgba(255,0,0,0.5);*/
+            background: #000000
+        }
+        ul>li{
+            float: left;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+       $(function () {
+           var offset = 0;
+           var timer;
+           function autoPlay() {
+               //1.让图片滚动起来
+                   timer = setInterval(function () {
+                   offset +=-10;
+                   if(offset <= -1200){
+                       offset = 0;
+                   }
+                   $("ul").css("marginLeft",offset);
+               },50);
+           }
+           autoPlay();
+           //2.监听li的移入和移出事件
+           $("li").hover(function () {
+               //停止滚动
+               //$(this).siblings().stop();
+               clearInterval(timer);
+               //给非当前选中添加蒙版
+               $(this).siblings().fadeTo(100,0.5);
+               //去除当前选中的蒙版
+               $(this).fadeTo(100,1);
+           },function () {
+              // $(this).siblings().stop();
+               //继续滚动
+               autoPlay();
+               //去除所有的蒙版
+               $("li").fadeTo(100,1)
+           });
+       })
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="../images/图片一.jpg" alt=""></li>
+        <li><img src="../images/图片二.jpg" alt=""></li>
+        <li><img src="../images/图片三.jpg" alt=""></li>
+        <li><img src="../images/图片四.jpg" alt=""></li>
+        <li><img src="../images/图片一.jpg" alt=""></li>
+        <li><img src="../images/图片二.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>
