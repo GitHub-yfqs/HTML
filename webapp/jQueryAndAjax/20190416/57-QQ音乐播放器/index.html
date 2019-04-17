@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="../../js/jquery.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.js"></script>
-    <script src="js/index.js"></script>
     <!--http://manos.malihu.gr/jquery-custom-content-scroller/-->
+    <script src="js/jquery.mCustomScrollbar.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/progress.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
     <div class="header">
@@ -37,227 +39,25 @@
                             <div class="list_singer">歌手</div>
                             <div class="list_time">时长</div>
                         </li>
-                        <li class="list_music">
+                       <!--
+                       //歌名过长会将 list_menu 挤到下面显示
+                       <li class="list_music">
                             <div class="list_check"><i></i></div>
                             <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
+                            <div class="list_name">绘梨衣-最后的旅行——记《龙族》
                                 <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
+                                <a href="javascript:;" title="播放"></a>
+                                <a href="javascript:;" title="添加"></a>
+                                <a href="javascript:;" title="下载"></a>
+                                <a href="javascript:;" title="分享"></a>
                                 </div>
                             </div>
-                            <div class="list_singer">测试</div>
+                            <div class="list_singer">绘梨衣</div>
                             <div class="list_time">
-                                <span>04:03</span>
+                                <span>music.timer</span>
                                 <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
-                        <li class="list_music">
-                            <div class="list_check"><i></i></div>
-                            <div class="list_number">1</div>
-                            <div class="list_name">从零玩转编程开发
-                                <div class="list_menu">
-                                    <a href="javascript:;" title="播放"></a>
-                                    <a href="javascript:;" title="添加"></a>
-                                    <a href="javascript:;" title="下载"></a>
-                                    <a href="javascript:;" title="分享"></a>
-                                </div>
-                            </div>
-                            <div class="list_singer">测试</div>
-                            <div class="list_time">
-                                <span>04:03</span>
-                                <a href="javascript:;" title="删除"></a>
-                            </div>
-                        </li>
+                             </div>
+                         </li>-->
                     </ul>
                 </div>
             </div>
@@ -266,10 +66,10 @@
                     <a href="javascript:;" class="song_info_pic">
                         <img src="images/player_cover.png" alt="">
                     </a>
-                    <div class="song_info_name">歌曲名称
+                    <div class="song_info_name">歌曲名称:
                         <a href="javascript:;">jQueryAndAjax学习</a>
                     </div>
-                    <div class="song_info_singer">歌手名
+                    <div class="song_info_singer">歌手名:
                         <a href="javascript:;">测试</a>
                     </div>
                     <div class="song_info_ablum">专辑名:
@@ -284,7 +84,38 @@
         </div>
     </div>
 <div class="footer">
-    <div class="footer_in"></div>
+    <div class="footer_in">
+        <a href="javascript:;" class="music_pre"></a>
+        <a href="javascript:;" class="music_play"></a>
+        <a href="javascript:;" class="music_next"></a>
+        <div class="music_progress_info">
+            <div class="music_progress_top">
+                <span class="music_progress_name">jQueryAndAjax学习 / 泉来啦</span>
+                <span class="music_progress_time">00:00 / 05:10</span>
+            </div>
+            <div class="music_progress_bar">
+                <div class="music_progress_line">
+                    <div class="music_progress_dot"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="music_mode"></a>
+        <a href="javascript:;" class="music_fav"></a>
+        <a href="javascript:;" class="music_down"></a>
+        <a href="javascript:;" class="music_comment"></a>
+        <a href="javascript:;" class="music_only"></a>
+        <div class="music_voice_info">
+            <a href="javascript:;" class="music_voice_icon"></a>
+            <div class="music_voice_bar">
+                <div class="music_voice_line">
+                    <div class="music_voice_dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="mask_bg"></div>
+<div class="mask"></div>
+<audio src=""></audio>
 </body>
 </html>
