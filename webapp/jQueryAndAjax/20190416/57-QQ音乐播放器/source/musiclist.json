@@ -14,8 +14,17 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
+  },
+  {
+    "name":"The Sore Feet Song",
+    "singer":"Ally Kerr",
+    "album":"jQueryAndAjax",
+    "timer":"01:33",
+    "link_url":"./source/Ally Kerr - “The Sore Feet Song”.mp3",
+    "cover":"./source/虫师.jpg",
+    "link_lrc":"./source/TheSoreFeetSong.txt"
   },
   {
     "name":"最后的旅行——记《龙族》",
@@ -23,8 +32,17 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
+  },
+  {
+    "name":"The Sore Feet Song",
+    "singer":"Ally Kerr",
+    "album":"jQueryAndAjax",
+    "timer":"01:33",
+    "link_url":"./source/Ally Kerr - “The Sore Feet Song”.mp3",
+    "cover":"./source/虫师.jpg",
+    "link_lrc":"./source/TheSoreFeetSong.txt"
   },
   {
     "name":"最后的旅行——记《龙族》",
@@ -32,8 +50,17 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
+  },
+  {
+    "name":"The Sore Feet Song",
+    "singer":"Ally Kerr",
+    "album":"jQueryAndAjax",
+    "timer":"01:33",
+    "link_url":"./source/Ally Kerr - “The Sore Feet Song”.mp3",
+    "cover":"./source/虫师.jpg",
+    "link_lrc":"./source/TheSoreFeetSong.txt"
   },
   {
     "name":"最后的旅行——记《龙族》",
@@ -41,8 +68,17 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
+  },
+  {
+    "name":"The Sore Feet Song",
+    "singer":"Ally Kerr",
+    "album":"jQueryAndAjax",
+    "timer":"01:33",
+    "link_url":"./source/Ally Kerr - “The Sore Feet Song”.mp3",
+    "cover":"./source/虫师.jpg",
+    "link_lrc":"./source/TheSoreFeetSong.txt"
   },
   {
     "name":"最后的旅行——记《龙族》",
@@ -50,8 +86,17 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
+  },
+  {
+    "name":"The Sore Feet Song",
+    "singer":"Ally Kerr",
+    "album":"jQueryAndAjax",
+    "timer":"01:33",
+    "link_url":"./source/Ally Kerr - “The Sore Feet Song”.mp3",
+    "cover":"./source/虫师.jpg",
+    "link_lrc":"./source/TheSoreFeetSong.txt"
   },
   {
     "name":"最后的旅行——记《龙族》",
@@ -59,25 +104,7 @@
     "album":"jQueryAndAjax",
     "timer":"04:47",
     "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
-    "link_lrc":"./source/最后的旅行——记《龙族》.text"
-  },
-  {
-    "name":"最后的旅行——记《龙族》",
-    "singer":"绘梨衣",
-    "album":"jQueryAndAjax",
-    "timer":"04:47",
-    "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
-    "link_lrc":"./source/最后的旅行——记《龙族》.text"
-  },
-  {
-    "name":"最后的旅行——记《龙族》",
-    "singer":"绘梨衣",
-    "album":"jQueryAndAjax",
-    "timer":"04:47",
-    "link_url":"./source/绘梨衣 - 最后的旅行——记《龙族》.mp3",
-    "cover":"./images/player_cover.png",
+    "cover":"./source/绘梨衣.jpg",
     "link_lrc":"./source/最后的旅行——记《龙族》.text"
   }
 ]

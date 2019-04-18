@@ -29,6 +29,7 @@ $(function () {
     var player = new Player($audio);
     var progress;
     var voiceProgress;
+    var lyric;
 
     /*var $progressBar = $(".music_progress_bar");
     var $progressLine = $(".music_progress_line");
@@ -69,6 +70,7 @@ $(function () {
                     $musicList.append($item);
                 });
                 initMusicInfo(data[0]);
+                initMusicLyric(data[0]);
             },
             error: function (e) {
                 console.log(e);
@@ -98,6 +100,21 @@ $(function () {
 
     }
 
+    //3.初始化歌词信息
+    function initMusicLyric(music){
+        lyric = new Lyric(music.link_lrc);
+        var $lryicContainer = $(".song_lyric");
+        //清空上一首音乐的歌词
+        $lryicContainer.html("");
+        lyric.loadLyric(function () {
+            //创建歌词列表
+            $.each(lyric.lyrics, function (index, ele) {
+                var $item = $("<li>"+ele+"</li>");
+                $lryicContainer.append($item);
+            })
+        });
+    }
+
     initProgress();
     //3.初始化进度条
     function initProgress(){
@@ -123,7 +140,7 @@ $(function () {
             player.musicVoiceSeekTo(value);
         });
     }
-    //2.初始化事件监听
+    //4.初始化事件监听
     initEvents();
     function initEvents(){
         //1.监听歌曲的移入移出事件
@@ -192,6 +209,8 @@ $(function () {
 
             //3.6切换歌曲信息
             initMusicInfo($item.get(0).music);
+            //3.7切换歌词信息
+            initMusicLyric($item.get(0).music);
         });
 
         //4.监听底部控制区域播放按钮的点击
@@ -236,13 +255,23 @@ $(function () {
 
 
         //8.监听播放的进度
-        player.musicTimeUpadte(function (currentTime,duration,timeStr) {
+        player.musicTimeUpdate(function (currentTime,duration,timeStr) {
             //同步时间
             $(".music_progress_time").text(timeStr);
             //同步进度条
             //计算播放比例
             var value = currentTime / duration * 100;
             progress.setProgress(value);
+            //实现歌词同步
+            var index = lyric.currentIndex(currentTime);
+            var $item = $(".song_lyric li").eq(index);
+            $item.addClass("cur");
+            $item.siblings().removeClass("cur");
+
+            if(index <= 2) return;
+            $(".song_lyric").css({
+                marginTop: (-index + 2) * 30
+            });
         });
         /* player.$audio.on("timeupdate",function () {
              /!*console.log("正在播放音乐");*!/

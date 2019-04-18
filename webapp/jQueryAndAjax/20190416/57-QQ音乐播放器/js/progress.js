@@ -11,7 +11,7 @@
         },
         isMove: false,
         progressClick: function (callBack) {
-            var $this = this;
+            var $this = this;//此时此刻的this 是progress
             //监听背景的点击
             this.$progressBar.click(function (event) {
                 //获取背景距离窗口的位置
@@ -38,7 +38,7 @@
             this.$progressBar.mousedown(function () {
                 $this.isMove = true;
                 //2.监听鼠标移动事件
-                $(document).mousemove(function () {
+                $(document).mousemove(function (event) {
                     //获取点击的位置距离窗口的位置
                     eventLeft = event.pageX;
                     var offset = eventLeft - normalLift;

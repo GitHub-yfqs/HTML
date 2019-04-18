@@ -55,7 +55,7 @@
         getMusicCurrentTime: function () {
             return this.audio.currentTime;
         },*/
-        musicTimeUpadte: function (callBack) {
+        musicTimeUpdate: function (callBack) {
             var $this = this;
             this.$audio.on("timeupdate",function () {
                 var duration = $this.audio.duration;
@@ -94,7 +94,7 @@
             if(isNaN(value)) return;
             if(value < 0 || value > 1) return;
             //0~1  0.1 0.2
-            this.audio.valume = value;
+            this.audio.volume = value;//volume 写成了 valume
         }
     }
     Player.prototype.init.prototype = Player.prototype;

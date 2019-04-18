@@ -232,15 +232,22 @@ html,body{
 .song_info div a:hover{
     opacity: 1;
 }
+.content_right .song_lyric_container{
+    margin-top: 30px;
+    height: 150px;
+    overflow: hidden;
+}
 .content_right .song_lyric{
     /*background: green;*/
     text-align: center;
-    font-weight: bold;
-    margin-top: 30px;
+    /*margin-top: 30px;
+    height: 150px;
+    overflow: hidden;*/
 }
 .content_right .song_lyric li{
     list-style: none;
     line-height: 30px;
+    font-weight: bold;
     color: rgba(255,255,255,0.5);
 }
 .content_right .song_lyric .cur{
@@ -285,7 +292,7 @@ html,body{
 .footer_in .music_next{
     width: 19px;
     height: 20px;
-    background-position: 0 -30px;
+    background-position: 0 -52px;
 }
 .footer_in .music_progress_info{
     display: inline-block;
