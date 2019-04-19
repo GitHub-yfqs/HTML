@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-jQueryDOM操作相关方法</title>
+    <script src="../../js/jquery.min.js"></script>
+    <!--<script src="js/njQuery-1.0.0.js"></script>-->
+    <script>
+        $(function () {
+            /*
+              * DOM操作：
+              * 1.empty ==》 清空指定元素中的所有内容
+              * 2.remove ==》 删除所有的元素或指定元素
+              * 3.HTML ==》 设置所有元素的内容，获取第一个元素的内容
+              * 4.text ==》 设置所有元素的文本内容，获取所有元素的文本内容
+              * 5.appendTo ==》 将元素添加到指定元素内容的最后
+              * 6.append ==》 将元素添加到指定元素内部的最后
+              * 7.prependTo ==》 将元素添加到指定元素内部的最前面
+              * 8.prepend ==》 将元素添加到指定元素内部的最前面
+              * 9.insertAfter ==》 将元素添加到指定元素外部的后面
+              * 10.after ==》 将元素添加到指定元素外部的后面
+              * 11.insertBefore ==》 将元素添加到指定元素外部的前面
+              * 12.before ==》 将元素添加到指定元素外部的前面
+              * 13.replaceALL ==》 替换所有指定元素
+              * 14.replaceWith ==》 替换所有指定元素
+              * 15.clone ==》 复制节点（true深复制，false浅复制）
+              *
+              * */
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                //接收一个字符串 $(".item") ==》 jQuery
+                // $("p").prependTo(".item");
+                $("p").insertBefore(".item");
+
+
+                //接收一个jQuery对象 $($("div")); ==》 jQuery
+               // $("p").insertBefore($("li"));
+
+                //接收一个DOM元素 $(div);  ==》 jQuery
+                // var divs = document.querySelectorAll("div");
+                // $("p").insertBefore(divs);
+
+                // console.log($("p").prependTo(".item"));
+            }
+
+            function insertBefore(source, target) {
+                /*
+                * 调用者.insertBefore (插入的元素，参考的元素);
+                * insertBefore方法，调用者是谁就会将元素插入到谁里面
+                * */
+                //1.拿到指定元素的父元素
+                var parent = target.parentNode;
+                // 2.利用指定元素的父元素调用insertBefore方法
+                parent.insertBefore(source, target);
+            }
+            var p = document.querySelector("p");
+            var div = document.querySelector("div");
+            // insertBefore(p, div);
+        });
+    </script>
+</head>
+<body>
+<button>调用insertBefore方法</button>
+
+<div class="item">
+    <li>1我是第1个li</li>
+    <li>1我是第2个li</li>
+    <li>1我是第3个li</li>
+    <p>我是段落</p>
+</div>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
     <!--<script src="../../js/jquery.min.js"></script>-->
     <script src="js/njQuery-1.0.0.js"></script>
     <script>
-      /* $(function () {*/
+       /*$(function () {*/
             /*
             * jQ入口函数传入不同参数得到的实例
             * 1.传入'' null undefined NaN 0 false
@@ -21,29 +21,29 @@
 
             //1.传入'' null undefined NaN 0 false
            //会返回一个空的jQuery对象给我们
-           /*console.log($());
-           console.log($(''));
-           console.log($(null));
-           console.log($(undefined));
-           console.log($(NaN));
-           console.log($(0));
-           console.log($(false));*/
+           console.log($());
+           console.log($(false));
+      console.log($(''));
+      console.log($(null));
+      console.log($(undefined));
+      console.log($(NaN));
+      console.log($(0));0
 
            //2.传入html片段
            //会将创建好的DOM元素存储到jQuery对象中返回
-          /* console.log($('<p>1</p><p>2</p><p>3</p>'));*/
+           console.log($('<p>1</p><p>2</p><p>3</p>'));
            /* console.log($('    <div><p>1</p></p></div><div><p>1</p></div>   '));*/
 
            //3.传入选择器
            //会将找到的所有元素存储到jQuery对象中返回
-           /*console.log($('li'));*/
+           // console.log($('li'));
 
            //4.传入数组
            //会将数组中存储的元素依次存储到jQuery对象中返回
-           // console.log($([1, 2, 3, 4, 5, 6]));
+           console.log($([1, 2, 3, 4, 5, 6]));
 
-            // var arr = [1, 2, 3, 4, 5, 6];
-            // console.log($(arr));
+            /*var arr = [1, 2, 3, 4, 5, 6];
+            console.log($(arr));*/
 
             //5.传入伪数组
            //会将数组中存储的元素依次存储到jQuery对象中返回
@@ -59,17 +59,17 @@
          // console.log(({}).toString.apply(arr));
       //6.传入对象
            //会将传入的对象存储到jQuery对象中返回
-           /*function Person() {}
-           console.log(new Person());*/
+           function Person() {}
+           console.log(new Person());
 
            //7.传入DOM元素
            //会将传入的DOM元素存储到jQuery对象中返回
-           /*console.log($(document.createElement('div')));*/
+           console.log($(document.createElement('div')));
 
            //8.传入基本数据类型
            //会将传入的基本数据类型存储到jQuery对象中返回
-          /* console.log($(123));
-           console.log($(true));*/
+           console.log($(123));
+           console.log($(true));
 
           /*
           * 1.传入'' null undefined NaN 0 false
@@ -91,6 +91,7 @@
 </body>
 <script>
     //这个放在body前面 页面加载的时候先执行这个 li元素还没加载就找不到元素  返回空对象
-    /*console.log($('li'));*/
+    console.log($('li'));
+
 </script>
 </html>
