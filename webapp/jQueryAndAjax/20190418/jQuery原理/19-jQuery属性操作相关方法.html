@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-jQuery属性操作相关方法.html</title>
+
+    <!--<script src="../../js/jquery.min.js"></script>-->
+    <script src="js/njQuery-1.0.0.js"></script>
+    <script>
+        $(function () {
+            /*
+            * 1.attr(): 设置或者获取元素的属性节点
+            * 2.prop(): 设置或者获取元素的属性值
+            * 3.css(): 设置获取样式
+            * 4.val(): 获取设置value的值
+            * 5.hasClass()： 判断有没有指定类
+            * 6.addClass（）： 给所有元素添加指定类或所有类
+            * 7.removeClass（）： 清空所有元素指定类或所有类
+            * 8.toggleClass（）： 有则删，没有则添加
+            * */
+
+
+            //传递参数，只要调用者其中一个包含指定类就返回true，否则返回false
+            // console.log($("div").hasClass("cc"));
+            console.log($("div").hasClass("abc"));
+
+
+            // 没有传递参数返回false
+            console.log($("div").hasClass());
+/*
+            var input = document.querySelector("input");
+            // input.setAttribute("value", "123456");
+            var btn = document.querySelector("button");
+            btn.onclick = function (ev) {
+                // console.log(input.getAttribute("value"));
+                // console.log($('input').val());
+                console.log(input.value);
+            }*/
+
+            var div = document.querySelector("div");
+            // console.log(div.getAttribute("class"));
+            // console.log(div.className);
+            //1.获取元素中class保存的值
+            var className = " " + div.className + " ";
+            //通过indexOf判断是否包含指定的字符串
+            // console.log(className.indexOf("bb") != -1);
+            // console.log(className.indexOf(" " + "bb" + " "));
+            // console.log(className.indexOf(" " + "aabb" + " "));
+        });
+
+
+
+    </script>
+</head>
+<body>
+<div class="aabb bb cc"></div>
+<div class="aabb bb "></div>
+</body>
+</html>

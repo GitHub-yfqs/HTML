@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>18-jQuery属性操作相关方法.html</title>
+
+    <!--<script src="../../js/jquery.min.js"></script>-->
+    <script src="js/njQuery-1.0.0.js"></script>
+    <script>
+        $(function () {
+            /*
+            * 1.attr(): 设置或者获取元素的属性节点
+            * 2.prop(): 设置或者获取元素的属性值
+            * 3.css(): 设置获取样式
+            * 4.val(): 获取设置value的值
+            * 5.hasClass()： 判断有没有指定类
+            * 6.addClass（）： 给所有元素添加指定类或所有类
+            * 7.removeClass（）： 清空所有元素指定类或所有类
+            * 8.toggleClass（）： 有则删，没有则添加
+            * */
+
+
+            //不传递参数，返回第一个元素指定的样式
+            // console.log($('input').val());
+
+            // 传递两个参数，代表设置所有元素属性节点的值
+            // 并且返回值就是调用者
+            console.log($('input').val('新设置的'));
+/*
+            var input = document.querySelector("input");
+            // input.setAttribute("value", "123456");
+            var btn = document.querySelector("button");
+            btn.onclick = function (ev) {
+                // console.log(input.getAttribute("value"));
+                // console.log($('input').val());
+                console.log(input.value);
+            }*/
+        });
+
+
+    </script>
+</head>
+<body>
+<button>获取</button>
+<input type="text" value="默认值1"/>
+<input type="text" value="默认值2">
+</body>
+</html>
