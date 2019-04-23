@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-ajax-test</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000000;
+            margin: 50px auto;
+            text-align: center;
+            background: #ccc;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            display: block;
+            margin: 10px auto 10px;
+            border: 1px solid #000000;
+        }
+        p{
+            text-align: center;
+            background: pink;
+        }
+    </style>
+    <script src="myAjax2.js"></script>
+    <script>
+        window.onload = function (ev) {
+            // 1.获取需要设置的元素
+            var oTitle = document.querySelector("#title");
+            var oDes = document.querySelector("#des");
+            var oImg = document.querySelector("img");
+            // 2.获取所有的按钮
+            var oBtns = document.querySelectorAll("button");
+            // 3.给按钮添加点击事件
+            oBtns[0].onclick = function () {
+                // 4.发送ajax请求到服务器
+                ajax({
+                    type:"get",
+                    url:"http://127.0.0.1:8080/ajaxLearn/ajax1",
+                    data:{
+                        "userName":this.getAttribute("name"),
+                    },
+                    timeout:3000,
+                    success: function (xhr) {
+                        // alert(xhr.responseText);
+                        // console.log(xhr.responseText);
+                       var strs = xhr.responseText.split(",");
+                        // console.log(strs);
+                        oTitle.innerHTML = strs[0];
+                        oDes.innerHTML =strs[1];
+                        oImg.setAttribute("src",strs[2]);
+                    },
+                    error:function (xhr) {
+                        alert(xhr.status);
+                    }
+
+                });
+            }
+            oBtns[1].onclick = function () {
+                // 4.发送ajax请求到服务器
+                ajax({
+                    type:"get",
+                    url:"http://127.0.0.1:8080/ajaxLearn/ajax1",
+                    data:{
+                        "userName":this.getAttribute("name"),
+                    },
+                    timeout:3000,
+                    success: function (xhr) {
+                        // alert(xhr.responseText);
+                        var strs = xhr.responseText.split(",");
+                        // console.log(strs);
+                        oTitle.innerHTML = strs[0];
+                        oDes.innerHTML =strs[1];
+                        oImg.setAttribute("src",strs[2]);
+                    },
+                    error:function (xhr) {
+                        alert("请求失败");
+                    }
+
+                });
+            }
+            oBtns[2].onclick = function () {
+                // 4.发送ajax请求到服务器
+                ajax({
+                    type:"get",
+                    url:"http://127.0.0.1:8080/ajaxLearn/ajax1",
+                    data:{
+                        "userName":this.getAttribute("name"),
+                    },
+                    timeout:3000,
+                    success: function (xhr) {
+                        // alert(xhr.responseText);
+                        var strs = xhr.responseText.split(",");
+                        // console.log(strs);
+                        oTitle.innerHTML = strs[0];
+                        oDes.innerHTML =strs[1];
+                        oImg.setAttribute("src",strs[2]);
+                    },
+                    error:function (xhr) {
+                        alert("请求失败");
+                    }
+
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <p id="title">商品标题名称</p>
+    <img src="" alt="">
+    <p id="des">商品描述信息</p>
+    <button name="nz">女装</button>
+    <button name="bb">包包</button>
+    <button name="tx">拖鞋</button>
+</div>
+</body>
+</html>

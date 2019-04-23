@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-ajax-jquery.html</title>
+
+    <script src="myAjax2.js"></script>
+    <!--<script src="../../js/jquery-1.12.4.js"></script>-->
+
+    <script>
+        window.onload = function (ev) {
+            var oBtn = document.querySelector("button");
+            oBtn.onclick = function (ev1) {
+                /*$.ajax(
+                    {
+                        type: "get",
+                        url: "http://127.0.0.1:8080/ajaxLearn/ajax1",
+                        data: {
+                            "userName":"lnj",
+                            "userPwd":"123456"
+                        },
+                        success: function (msg) {
+                            alert("Data Saved:" + msg);
+                        },
+                        error: function (msg) {
+                            alert(msg.status);
+                        }
+                    }
+                );*/
+                ajax({
+                    type:"post",
+                    url:"http://127.0.0.1:8080/ajaxLearn/ajax1",
+                    data:{
+                        "userName":"lnj",
+                        "userPwd":"123456"
+                    },
+                    timeout:3000,
+                    success: function (xhr) {
+                        alert(xhr.responseText);
+                    },
+                    error: function (xhr) {
+                        alert("请求失败");
+                    }
+                });
+            }
+        }
+    </script>
+
+</head>
+<body>
+<button>发送请求按钮</button>
+</body>
+</html>

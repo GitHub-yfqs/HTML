@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-ajax-post.html</title>
+    <script src="myAjax2.js"></script>
+    <script>
+        window.onload = function (ev) {
+
+
+            var oBtn = document.querySelector("button");
+            oBtn.onclick = function (ev1) {
+              /*  var xhr;
+                if (window.XMLHttpRequest)
+                {
+                    //code for IE7+,Firefox,Chrome,Opera,Safari
+                    xhr = new XMLHttpRequest();
+                }else{
+                    //code for IE6,IE5
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                // var xhr = new XMLHttpRequest();
+                // xhr.open("GET","http://127.0.0.1:8080/ajaxLearn/ajax1",true);
+                /!*
+                * 在IE浏览器中，如果通过Ajax发送GET请求，那么IE浏览器认为同一个URL只有一个结果
+                * 05-ajax-get.text === abc
+                * console.log(Math.random());
+                  console.log(new Date().getTime());
+                * *!/
+                xhr.open("POST","http://127.0.0.1:8080/ajaxLearn/ajax1",true);
+                //注意点： 一下代码必须放在open和send中间
+                xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+                xhr.send("userName=zs&userPwd=123456");
+                xhr.onreadystatechange = function (ev2) {
+                    if (xhr.readyState === 4){
+                        if (xhr.status >= 200 && xhr.status < 300 ||
+                            xhr.status === 304){
+                            // alert("请求成功");
+                            alert(xhr.responseText);
+                        } else{
+                            alert("请求失败");
+                        }
+                    }
+                }*/
+              ajax("POST", "http://127.0.0.1:8080/ajaxLearn/ajax1",{
+                    "userName": "lnj",
+                  "userPwd": "123456"
+                  },3000,function (xhr) {
+                  alert(xhr.responseText);
+                  },function (xhr) {
+                  alert("请求失败");
+                  });
+            }
+        }
+    </script>
+
+</head>
+<body>
+<button>发送请求按钮</button>
+</body>
+</html>
