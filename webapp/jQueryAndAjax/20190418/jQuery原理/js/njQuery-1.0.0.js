@@ -75,7 +75,7 @@
             // else if(typeof selector === "object"&&
             //     "length" in selector &&
             //     selector !== window){
-                else if(njQuery.isArray(selector)){
+            else if(njQuery.isArray(selector)){
                 //console.log("数组");
                 // 3.1真数组
                 if(({}).toString.apply(selector) === "[object Array]"){
@@ -270,8 +270,23 @@
                 }
             }
             return res;
-        }
+        },
+        getStyle: function (dom, styleName) {
+            if(window.getComputedStyle){
+                return window.getComputedStyle(dom)[styleName];
+            }else{
+                return dom.currentStyle[styleName];
+            }
+        },
+        addEvent: function addEvent(dom, name, callBack) {
+            if(dom.addEventListener){
+                dom.addEventListener(name, callBack);
+            }else{
+                dom.attachEvent("on"+ name, callBack);
+            }
+         }
     });
+    //DOM操作相关方法
     njQuery.prototype.extend({
         empty: function () {
             //1.遍历所有找到的元素
@@ -423,7 +438,7 @@
             }
             return this;
         },
-        insertBefore: function () {
+        insertBefore: function (sele) {
             //1.统一的将传入的数据转换成jQuery对象
             var $target = $(sele);
             var $this = this;
@@ -448,6 +463,280 @@
             });
             //返回所有添加的元素
             return $(res);
+        },
+        replaceAll: function (sele) {
+
+            //1.统一的将传入的数据转换成jQuery对象
+            var $target = $(sele);
+            var $this = this;
+            var res = [];
+            // 1.遍历取出所有指定的元素
+            $.each($target,function (key, value) {
+                var parent = value.parentNode;
+                //2.遍历取出所有的元素
+                $this.each(function (k, v) {
+                    // 3.判断当前是不是第0个指定元素
+                    if (key === 0) {
+                        //1.将元素插入到指定元素的前面
+                        $(v).insertBefore(value);
+                        // 2.将指定元素删除
+                        $(value).remove();
+                        res.push(v);
+                    } else {
+                        // 先拷贝再添加
+                        var temp = v.cloneNode(true);//1.将元素插入到指定元素的前面
+                        $(temp).insertBefore(value);
+                        // 2.将指定元素删除
+                        $(value).remove();
+                        res.push(temp);
+                    }
+                });
+            });
+            //返回所有添加的元素
+            return $(res);
+        },
+        clone: function (deep) {
+            var res = [];
+            //判断是否是深复制
+            if(deep){
+                //深复制
+                this.each(function (key, ele) {
+                    var temp = ele.cloneNode(true);
+                    //遍历元素中的eventsCache对象
+                    njQuery.each(ele.eventsCache, function (name, array) {
+                        //遍历事件对应的数组
+                        njQuery.each(array, function (index, method) {
+                            //给复制的元素添加事件
+                            $(temp).on(name, method);
+                        });
+                    });
+                    res.push(temp);
+                });
+                return $(res);
+            }else{
+                //浅复制
+                this.each(function (key, ele) {
+                    var temp = ele.cloneNode(true);
+                    res.push(temp);
+                });
+                return $(res);
+            }
+        }
+    });
+    //属性操作相关方法
+    njQuery.prototype.extend({
+        attr: function (attr, value) {
+            //1.判断是否是字符串
+            if(njQuery.isString(attr)){
+                // 判断是一个字符串还是两个字符串
+                if(arguments.length === 1){
+                    return this[0].getAttribute(attr);
+                }else{
+                    this.each(function (key, ele) {
+                        ele.setAttribute(attr, value);
+                    })
+                }
+            }
+            //2.判断是否是对象
+            else if(njQuery.isObject(attr)){
+                var $this = this;
+                //遍历取出所有属性节点的名称和对应的值
+                $.each(attr,function (key, value) {
+                    //遍历取出所有的元素
+                    $this.each(function (k, ele) {
+                        ele.setAttribute(key, value);
+                    });
+                })
+            }
+            return this;
+        },
+        prop: function (attr, value) {
+            //1.判断是否是字符串
+            if(njQuery.isString(attr)){
+                // 判断是一个字符串还是两个字符串
+                if(arguments.length === 1){
+                    return this[0][attr];
+                }else{
+                    this.each(function (key, ele) {
+                        ele[attr] = value;
+                    });
+                }
+            }
+            //2.判断是否是对象
+            else if(njQuery.isObject(attr)){
+                var $this = this;
+                //遍历取出所有属性节点的名称和对应的值
+                $.each(attr,function (key, value) {
+                    //遍历取出所有的元素
+                    $this.each(function (k, ele) {
+                        ele[key] = value;
+                    });
+                })
+            }
+            return this;
+        },
+        css: function (attr, value) {
+            //1.判断是否是字符串
+            if(njQuery.isString(attr)){
+                // 判断是一个字符串还是两个字符串
+                if(arguments.length === 1){
+                    return njQuery.getStyle(this[0], attr);
+                }else{
+                    this.each(function (key, ele) {
+                        ele.style[attr] = value;
+                    });
+                }
+            }
+            //2.判断是否是对象
+            else if(njQuery.isObject(attr)){
+                var $this = this;
+                //遍历取出所有属性节点的名称和对应的值
+                $.each(attr,function (key, value) {
+                    //遍历取出所有的元素
+                    $this.each(function (k, ele) {
+                        ele.style[key] = value;
+                    });
+                })
+            }
+            return this;
+        },
+        val: function (content) {
+            if(arguments.length === 0){
+                return this[0].value;
+            }else{
+                this.each(function (key, ele) {
+                    ele.value = content;
+                });
+                return this;
+            }
+        },
+        hasClass: function (name) {
+            var flag = false;
+            if(arguments.length == 0){
+                return false;
+            }else{
+                this.each(function (key, ele) {
+                    //1.获取元素中class保存的值
+                    var className = " " + ele.className + " ";
+                    //2.给指定字符串的前后也加上空格
+                    name = " " + name + " ";
+                    //3.通过indexOf判断是否包含指定的字符串
+                    if (className.indexOf(name) != -1){
+                        flag = true;
+                        return false;
+                    }
+                });
+                return flag;
+            }
+        },
+        addClass:function (name) {
+            if(arguments.length === 0) return this;
+            //1.对传入的类名进行切割
+            var names = name.split(" ");
+            //2.遍历取出所有的元素
+            this.each(function (key, ele) {
+                //3.遍历数组取出每个类名
+                $.each(names,function (k, value) {
+                    //4.判断指定元素中是否包含指定的类名
+                    if(!$(ele).hasClass(value)){
+                        ele.className = ele.className + " " + value;
+                    }
+                });
+            });
+            return this;
+        },
+        removeClass: function (name) {
+            if(arguments.length === 0) {
+                this.each(function (key, ele) {
+                   ele.className = "";
+                });
+            }else{
+                //1.对传入的类名进行切割
+                var names = name.split(" ");
+                //2.遍历取出所有的元素
+                this.each(function (key, ele) {
+                    //3.遍历数组取出每个类名
+                    $.each(names,function (k, value) {
+                        //4.判断指定元素中是否包含指定的类名
+                        if($(ele).hasClass(value)){
+                            ele.className = (" " + ele.className + " ").replace(" " + value + " ","");
+                        }
+                    });
+                });
+            }
+
+            return this;
+        },
+        toggleClass: function (name) {
+            //1.对传入的类名进行切割
+            var names = name.split(" ");
+            //2.遍历取出所有的元素
+            this.each(function (key, ele) {
+                //3.遍历数组取出每个类名
+                $.each(names,function (k, value) {
+                    //4.判断指定元素中是否包含指定的类名
+                    if($(ele).hasClass(value)){
+                        //删除
+                        $(ele).removeClass(value);
+                    }else{
+                        //添加
+                        $(ele).addClass(value);
+                    }
+                });
+            });
+            return this;
+        }
+    });
+    //事件操作相关的方法
+    njQuery.prototype.extend({
+        on: function (name, callBack) {
+           //1.遍历取出所有元素
+           this.each(function (key, ele) {
+               // 2.判断当前元素中是否有保存所有事件的对象
+               if(!ele.eventsCache){
+                   ele.eventsCache = {};
+               }
+               // 3.判断对象中有没有对应类型的数组
+               if(!ele.eventsCache[name]){
+                   ele.eventsCache[name] = [];
+                   // 4.将回调函数添加到数据中
+                   ele.eventsCache[name].push(callBack);
+                   // 5.添加对应类型的事件
+                   njQuery.addEvent(ele, name, function () {
+                       njQuery.each(ele.eventsCache[name], function (k, method) {
+                           method();
+                       });
+                   });
+               }else{
+                   // 4.奖回调函数添加到数据中
+                   ele.eventsCache[name].push(callBack);
+               }
+           });
+       },
+        off: function (name, callBack) {
+            //1.判断是否没有传入参数
+            if(arguments.length === 0){
+                this.each(function (key, ele) {
+                    ele.eventsCache = {};
+                });
+            }
+            // 2.判断是否传入一个参数
+            else if(arguments.length === 1){
+                this.each(function (key, ele) {
+                    ele.eventsCache[name] = [];
+                });
+            }
+            // 3.判断是否传入了两个参数
+            else if(arguments.length === 2){
+                this.each(function (key, ele) {
+                    njQuery.each(ele.eventsCache[name], function (index, method) {
+                        //判断当前遍历到的方法和传入的方法是否相同
+                        if(method === callBack){
+                            ele.eventsCache[name].splice(index, 1);
+                        }
+                    });
+                });
+            }
         }
     });
    /* njQuery.isString = function(str){
