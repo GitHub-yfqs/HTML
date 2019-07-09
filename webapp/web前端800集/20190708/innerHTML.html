@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+</head>
+<script type="text/javascript">
+    /*
+    * innerHTML 标签间的所有内容
+    * 如果在innerHTML包含标签，标签会被识别，并且会解析，呈现对应的效果。
+    * */
+    window.onload = function () {
+        var oBtn = document.getElementById("btn");
+        var oDiv = document.getElementById("div1");
+
+        oBtn.onclick = function () {
+            //获取div标签间的内容
+            //alert(oDiv.innerHTML);
+
+            //设置div标签间的内容
+            oDiv.innerHTML = "<h1>我是替换文本</h1>";
+        }
+    }
+</script>
+<body>
+<div id="div1"><em>为借口了</em></div>
+    <button id="btn">按钮</button>
+</body>
+</html>

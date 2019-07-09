@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒表</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 400px;
+            background-color: gray;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #count{
+            width: 200px;
+            height: 150px;
+            line-height: 150px;
+            margin: auto;
+            font-size: 40px;
+        }
+        #div1 input{width: 150px; height: 40px; background-color: yellow; font-size: 25px; margin-top: 20px}
+    </style>
+    <script type="text/javascript">
+        //可以将查找标签节点的操作进行简化
+        function $(id) {
+            return document.getElementById(id);
+        }
+
+        window.onload = function () {
+            //点击开始计数
+            var count = 0;//开始计数以后，累加的总秒数
+            var timer = null;
+            $("start").onclick = function () {
+                timer = setInterval(function () {
+                    count++;
+                    //需要改变页面上时分秒的值。
+                    $("id_S").innerHTML = showNum(count%60);
+                    $("id_M").innerHTML = showNum(parseInt(count/60)%60);
+                    $("id_H").innerHTML = showNum(parseInt(count/3600));
+                },1000);
+            }
+            //暂停
+            $("pause").onclick = function () {
+                //取消定时器
+                clearInterval(timer);
+            }
+            //停止 停止计数，数据清零<1>数据清零<2>页面展示数据清零
+            $("stop").onclick = function () {
+                //取消定时器
+                clearInterval(timer);
+                //<1>数据清零 总秒数清零
+                count = 0;
+                //<2>页面展示数据清零
+                $("id_S").innerHTML = "00";
+                $("id_M").innerHTML = "00";
+                $("id_H").innerHTML = "00";
+            }
+        }
+
+
+        //处理单个数字
+        function showNum(num) {
+            if(num < 10){
+                return "0" + num;
+            }else{
+                return num;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="count">
+            <span id="id_H">00</span>:
+            <span id="id_M">00</span>:
+            <span id="id_S">00</span>
+        </div>
+        <input  type="button" id="start" value="开始"/>
+        <input  type="button" id="pause" value="暂停"/>
+        <input  type="button" id="stop" value="停止"/>
+    </div>
+</body>
+</html>
