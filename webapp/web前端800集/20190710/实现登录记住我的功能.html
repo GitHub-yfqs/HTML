@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现登录记住我的功能</title>
+    <script type="text/javascript">
+        function setCookie(name,value,day) {
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+day);
+            document.cookie = name + "=" + value + ";expires=" + oDate;
+        }
+
+        function getCookie(name) {
+            var str = document.cookie;
+            var arr = str.split(";");
+            for (var i = 0; i < arr.length; i++) {
+                var arr1 = arr[i].split("=");
+                if (arr1[0] == name) {
+                    return arr1[1];
+                }
+            }
+        }
+
+        function removeCookie(name) {
+            setCookie(name,1,-1);
+        }
+    </script>
+</head>
+<body>
+    用户名：<input type="text">
+    密码：<input type="password">
+    <label><input type="checkbox">记住我</label>
+    <input type="button" value="登录">
+</body>
+<script type="text/javascript">
+    var aInput = document.getElementsByTagName("input");
+
+    if(getCookie("username")){
+        aInput[0].value = getCookie("username");
+        aInput[1].value = getCookie("password");
+    }
+
+    aInput[3].onclick = function () {
+        var username = aInput[0].value;
+        var password = aInput[1].value;
+        if(aInput[2].checked){
+            setCookie("username",username,7);
+            setCookie("password",password,7);
+        }
+    }
+</script>
+</html>
