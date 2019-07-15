@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsonp跨域请求</title>
+    <script src="../../jQueryAndAjax/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<input type="text">
+<ul></ul>
+</body>
+<script>
+    function getData(data) {
+        var script = document.querySelector('#jsonp');
+        script.parentNode.removeChild(script);
+        $('ul').html('');
+        for(var i=0; i<data.s.length; i++){
+            $('<li>' + data.s[i] + '</li>').appendTo('ul');
+        }
+    }
+
+    function getList(wd) {
+        var script = document.createElement('script');
+        script.id = 'jsonp';
+        script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=getData&wd=' + wd;
+        document.body.appendChild(script);
+    }
+
+    $('input').keyup(function () {
+        var wd = $(this).val();
+        getList(wd);
+    });
+</script>
+</html>
