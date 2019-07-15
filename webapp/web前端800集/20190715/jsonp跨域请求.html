@@ -10,7 +10,7 @@
 <ul></ul>
 </body>
 <script>
-    function getData(data) {
+   /* function getData(data) {
         var script = document.querySelector('#jsonp');
         script.parentNode.removeChild(script);
         $('ul').html('');
@@ -29,6 +29,18 @@
     $('input').keyup(function () {
         var wd = $(this).val();
         getList(wd);
+    });*/
+
+    $.ajax({
+       type:'get',
+       url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+        dataType:'jsonp',
+        jsonp:'cb',
+        data:{
+           wd:'json'
+        }
+    }).done(function (resp) {
+        alert(resp.s);
     });
 </script>
 </html>

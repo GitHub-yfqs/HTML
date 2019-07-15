@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery自定义插件</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script src="../../jQueryAndAjax/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+</body>
+<script>
+    //1.jquery的插件，定义在jquery.fn的基础上
+    //2.命名冲突的解决
+    //3.循环jQuery对象中的每个元素
+    //4.在函数中，将jQuery返回（this)
+
+    (function ($) {
+        $.fn.extend({
+            randomColor: function () {
+                function random() {
+                    var r = Math.floor(Math.random() * 256);
+                    var g = Math.floor(Math.random() * 256);
+                    var b = Math.floor(Math.random() * 256);
+
+                    return 'rgb(' + r + ',' + g + ',' + b + ')';
+                }
+
+                this.each(function (index) {
+                    $(this).css({
+                        backgroundColor:random()
+                    })
+                })
+                return this;
+            }
+        })
+    })(jQuery)
+
+    $('div').randomColor();
+</script>
+</html>
