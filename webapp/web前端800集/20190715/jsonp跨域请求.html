@@ -10,7 +10,7 @@
 <ul></ul>
 </body>
 <script>
-   /* function getData(data) {
+    function getData(data) {
         var script = document.querySelector('#jsonp');
         script.parentNode.removeChild(script);
         $('ul').html('');
@@ -22,25 +22,26 @@
     function getList(wd) {
         var script = document.createElement('script');
         script.id = 'jsonp';
-        script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=getData&wd=' + wd;
+        // script.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?cb=getData&wd=' + wd;
+        script.src = 'https://odin.re.taobao.com/search_stext?cb=getData&catid=&frcatid=&keyword=' + wd; //淘宝的没有效果
         document.body.appendChild(script);
     }
 
     $('input').keyup(function () {
         var wd = $(this).val();
         getList(wd);
-    });*/
+    });
 
-    $.ajax({
+   /* $.ajax({
        type:'get',
        url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
         dataType:'jsonp',
         jsonp:'cb',
         data:{
-           wd:'json'
+           wd:'爱国'
         }
     }).done(function (resp) {
         alert(resp.s);
-    });
+    });*/
 </script>
 </html>
